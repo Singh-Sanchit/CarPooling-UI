@@ -56,7 +56,7 @@
 
         <!--Sign In Container Start-->
         <div class="sign-up-form-container login text-center">
-          <form class="width-100" onsubmit="return loginDriver()">
+          <form class="width-100" id="driverLogin">
             <!--Sign In Field Start-->
             <div class="form-group">
               <div class="input-group">
@@ -66,6 +66,7 @@
                   </span>
                 </div>
                 <input
+                  id="lusername"
                   class="form-control"
                   type="text"
                   autocomplete="off"
@@ -85,6 +86,7 @@
                   </span>
                 </div>
                 <input
+                  id="lpassword"
                   class="form-control"
                   type="password"
                   name="password"
@@ -101,7 +103,6 @@
               </div>
             </div>
             <!--Sign In Field End-->
-
             <div class="form-submit-button">
               <input
                 type="submit"
@@ -116,7 +117,7 @@
 
         <!--Sign Up Container Start-->
         <div class="sign-up-form-container sign-up text-center hidden">
-          <form class="width-100">
+          <form class="width-100" id="driverSignUp">
             <!--Sign Up Field Start-->
             <div class="form-group">
               <div class="input-group">
@@ -126,11 +127,13 @@
                   </span>
                 </div>
                 <input
+                  id="sname"
+                  required
                   class="form-control"
                   type="text"
                   autocomplete="off"
-                  name="username"
-                  placeholder="Username"
+                  name="name"
+                  placeholder="Full Name"
                 />
               </div>
             </div>
@@ -145,8 +148,10 @@
                   </span>
                 </div>
                 <input
+                  id="semail"
                   class="form-control"
-                  type="text"
+                  type="email"
+                  required
                   autocomplete="off"
                   name="email"
                   placeholder="Email"
@@ -164,9 +169,11 @@
                   </span>
                 </div>
                 <input
+                  id="sphoneno"
                   class="form-control"
                   type="tel"
                   name="phone"
+                  required
                   placeholder="Mobile Phone Number"
                 />
               </div>
@@ -182,8 +189,10 @@
                   </span>
                 </div>
                 <input
+                  id="spassword"
                   class="form-control"
                   type="password"
+                  required
                   name="password"
                   placeholder="Password"
                 />
@@ -208,8 +217,10 @@
                   </span>
                 </div>
                 <input
+                  id="scpassword"
                   class="form-control"
                   type="password"
+                  required
                   name="password"
                   placeholder="Confirm Password"
                 />
@@ -226,9 +237,12 @@
             <!--Sign Up Field End-->
 
             <div class="form-submit-button">
-              <a href="sign-up.html" class="btn btn-dark text-uppercase "
-                >Sign Up</a
-              >
+              <input
+                type="submit"
+                class="btn btn-dark text-uppercase"
+                id="adder"
+                value="Sign Up"
+              />
             </div>
           </form>
         </div>
@@ -257,6 +271,7 @@
     <script src="../js/popper.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/main.js"></script>
+    <script src="../api/root.js"></script>
     <script src="../api/authentication.js"></script>
   </body>
 
