@@ -2277,6 +2277,9 @@ a[href^="https://maps.google.com/maps"] {
   text-align: center;
   text-transform: uppercase;
 }
+.request-ride-btn{
+  bottom: -100px!important;
+}
 .request-ride-btn,
 .go-to-pickup-btn {
   position: absolute;
