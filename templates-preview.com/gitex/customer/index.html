@@ -69,6 +69,7 @@
                         <span class="dotted-line-index"></span>
                     </div>
                               
+                    <form id="customer-form">
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label>Departure date:</label>
@@ -78,11 +79,12 @@
                             max="3000-12-31"
                             min="1000-01-01"
                             class="form-control"
-                            />
+                            id="datefield"
+                            required/>
                         </div>
                         <div class="form-group col-md-3">
                             <label>Hour:</label>
-                            <select class="form-control" id="exampleFormControlSelect2">
+                            <select class="form-control" id="hrs" required>
                                 <option>00</option>
                                 <option>01</option>
                                 <option>02</option>
@@ -111,7 +113,7 @@
                         </div>
                         <div class="form-group col-md-3">
                             <label>Minutes:</label>
-                            <select class="form-control" id="exampleFormControlSelect2">
+                            <select class="form-control" id="mins" required>
                                 <option>00</option>
                                 <option>10</option>
                                 <option>20</option>
@@ -124,10 +126,10 @@
                     </div>
                               
                     <div class="w-75 request-ride-btn" style="margin:10px auto;">
-                        <button type="button" class="btn btn-primary">Request a Ride</button>
-                    </div>
-            
+                        <button type="submit" class="btn btn-primary">Request a Ride</button>
+                    </div>            
                 </div>
+                </form>
             </div>
         </div>
 
@@ -144,7 +146,7 @@
             <!--Request Ride Button Container End -->
 
             <!--Choose a Car Container Start-->
-            <div class="ride-options-bottom hidden">
+            <!-- <div class="ride-options-bottom hidden">
                 <div class="cars-options">
                     <div class="car-option" data-about-target-id="about-section-1">
                         <img src="../icons/audi.svg" alt="Car Option 1">
@@ -215,7 +217,7 @@
                 <div class="confirm-ride-btn">
                     <button type="button" class="btn btn-primary">Confirm</button>
                 </div>
-            </div>
+            </div> -->
             <!--Choose a Car Container End-->
 
             <!--Wish Container Start-->
@@ -533,6 +535,8 @@
 <script src="../js/bootstrap.min.js"></script>
 <script src="../js/main.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmwbZFOM6zFZpFMOng9mZMc-UzQtXvsaU&amp;libraries=places&amp;callback=initMap"></script>
+<script src="../api/getRides.js"></script>
+
 </body>
 
 <!-- Mirrored from templates-preview.com/gitex/customer/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 26 Sep 2019 09:19:19 GMT -->

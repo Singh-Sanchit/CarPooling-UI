@@ -966,13 +966,13 @@ function AutocompleteDirectionsHandler(map) {
   var originAutocomplete = new google.maps.places.Autocomplete(originInput);
   // originInputContainer.appendChild(originAutocomplete);
   // Specify just the place data fields that you need.
-  originAutocomplete.setFields(["place_id"]);
+  originAutocomplete.setFields(["place_id", "geometry"]);
 
   var destinationAutocomplete = new google.maps.places.Autocomplete(
     destinationInput
   );
   // Specify just the place data fields that you need.
-  destinationAutocomplete.setFields(["place_id"]);
+  destinationAutocomplete.setFields(["place_id", "geometry"]);
 
   this.setupPlaceChangedListener(originAutocomplete, "ORIG");
   this.setupPlaceChangedListener(destinationAutocomplete, "DEST");
@@ -998,8 +998,14 @@ AutocompleteDirectionsHandler.prototype.setupPlaceChangedListener = function(
     }
     if (mode === "ORIG") {
       me.originPlaceId = place.place_id;
+      localStorage.setItem('origin-lat', place.geometry.location.lat());
+      localStorage.setItem('origin-lng', place.geometry.location.lng());
+
     } else {
       me.destinationPlaceId = place.place_id;
+      localStorage.setItem('dest-lat', place.geometry.location.lat());
+      localStorage.setItem('dest-lng', place.geometry.location.lng());
+
     }
     me.route();
   });
