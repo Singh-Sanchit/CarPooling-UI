@@ -274,57 +274,57 @@
       .find(".services-details")
       .fadeOut(10);
 
-    var servicesButton = $(".btn-services");
-    servicesButton.on("click", function(el) {
-      el.preventDefault();
+    // var servicesButton = $(".btn-services");
+    // servicesButton.on("click", function(el) {
+    //   el.preventDefault();
 
-      var actionId = $(this).attr("href"),
-        hideSection = $(this).closest(".each-services-outer"),
-        parentSection = $(this).closest(".services-section"),
-        sectionHeading = parentSection.find(".section-header");
+    //   var actionId = $(this).attr("href"),
+    //     hideSection = $(this).closest(".each-services-outer"),
+    //     parentSection = $(this).closest(".services-section"),
+    //     sectionHeading = parentSection.find(".section-header");
 
-      hideSection.addClass("active");
-      sectionHeading.addClass("active");
+    //   hideSection.addClass("active");
+    //   sectionHeading.addClass("active");
 
-      setTimeout(function() {
-        hideSection.fadeOut(10);
-        sectionHeading.fadeOut(10);
-      }, 400);
+    //   setTimeout(function() {
+    //     hideSection.fadeOut(10);
+    //     sectionHeading.fadeOut(10);
+    //   }, 400);
 
-      setTimeout(function() {
-        $(actionId).fadeIn(10);
-        $(actionId).addClass("active");
-      }, 550);
-    });
+    //   setTimeout(function() {
+    //     $(actionId).fadeIn(10);
+    //     $(actionId).addClass("active");
+    //   }, 550);
+    // });
 
     /**
      * =============================================
      * Services Detail Back 3
      * =============================================
      */
-    var servicesBackButton = $(".btn-services-back");
-    servicesBackButton.on("click", function(el) {
-      el.preventDefault();
+    // var servicesBackButton = $(".btn-services-back");
+    // servicesBackButton.on("click", function(el) {
+    //   el.preventDefault();
 
-      var actionId = $(".each-services-outer"),
-        hideSection = $(this).closest(".services-details"),
-        parentSection = $(this).closest(".services-section"),
-        sectionHeading = parentSection.find(".section-header");
+    //   var actionId = $(".each-services-outer"),
+    //     hideSection = $(this).closest(".services-details"),
+    //     parentSection = $(this).closest(".services-section"),
+    //     sectionHeading = parentSection.find(".section-header");
 
-      hideSection.removeClass("active");
+    //   hideSection.removeClass("active");
 
-      setTimeout(function() {
-        hideSection.fadeOut(10);
-      }, 400);
+    //   setTimeout(function() {
+    //     hideSection.fadeOut(10);
+    //   }, 400);
 
-      setTimeout(function() {
-        $(actionId).fadeIn(10);
-        $(actionId).removeClass("active");
+    //   setTimeout(function() {
+    //     $(actionId).fadeIn(10);
+    //     $(actionId).removeClass("active");
 
-        sectionHeading.fadeIn(10);
-        sectionHeading.removeClass("active");
-      }, 550);
-    });
+    //     sectionHeading.fadeIn(10);
+    //     sectionHeading.removeClass("active");
+    //   }, 550);
+    // });
 
     /**
      * ===============================================
