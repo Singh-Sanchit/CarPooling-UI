@@ -16,6 +16,11 @@ document.getElementById("driverLogin").addEventListener("submit", e => {
     .then(res => res.json())
     .then(info => {
       if (info.success) {
+        console.log(info.data.userId)
+        localStorage.setItem("userId", info.data.userId)
+        if(info.data.profileCompleted){
+          window.location = "index.html";
+        }
         window.location = "drivers-license.html";
       } else {
         alert(info.message);
@@ -50,7 +55,7 @@ document.getElementById("driverSignUp").addEventListener("submit", e => {
         .then(res => res.json())
         .then(info => {
           if (info.success) {
-            window.location = "sign-up.html";
+            window.location = "sign-up-page-2.html";
           } else {
             alert(info.message);
           }
