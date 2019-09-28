@@ -17,6 +17,7 @@ document.getElementById("driverLogin").addEventListener("submit", e => {
 	  .then(info => {
 		if (info.success) {
 		  window.location = "index.html";
+		  localStorage.setItem("userId", info.data.userId);
 		} else {
 		  alert(info.message);
 		}

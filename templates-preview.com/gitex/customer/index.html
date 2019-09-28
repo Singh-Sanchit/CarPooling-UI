@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../css/fontawesome.css">
     <!-- Main Style -->
     <link rel="stylesheet" href="../css/styles.css">
-    <title>Add Route</title>
+    <title>Go Ride</title>
 </head>
 <body>
 
@@ -32,7 +32,7 @@
             <span class="float-left back-to-map hidden">
                 <img src="../icons/back.svg" alt="Back Icon">
             </span>
-            <span class="title">Add Route</span>
+            <span class="title">Find a Ride</span>
             <a href="#">
                 <span class="float-right menu-open closed">
                     <img src="../icons/menu.svg" alt="Menu Hamburger Icon">
@@ -45,7 +45,7 @@
             <div class="margin-top-10 height-auto row" id="origin-input-container">
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
-                    <div class="w-100 map-input-container map-input-container-top" style="margin: 5px auto; margin-top:120px;">
+                    <div class="w-100 map-input-container map-input-container-top" style="margin: 5px auto; margin-top:30px;">
                         <span class="fas fa-location-arrow location-icon-rotate map-input-icon"></span>
                         <div class="map-input display-flex">
                             <input id="origin-input" class="controls flex-1" type="text"
@@ -123,6 +123,15 @@
                                 <option>60</option>
                             </select>
                         </div>
+                        <div class="form-group col-md-6">
+                            <label>No. of Seats</label>
+                            <select class="form-control" id="seats" >
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                            </select>
+						</div>    
                     </div>
                               
                     <div class="w-75 request-ride-btn" style="margin:10px auto;">
@@ -138,38 +147,9 @@
         <!--Google Maps End-->
         <div class="container row justify-content-center" >
             <div class="col-3"></div>
-            <div id="rideCards" class="col-6"></div>
+            <div id="rideCards" class="col-md-6"></div>
 
-            <div class="modal" id="myModal">
-                    <div class="modal-dialog">
-                      <div class="modal-content">
-                  
-                        <!-- Modal Header -->
-                        <div class="modal-header">
-                          <h4 class="modal-title">Select number of seats</h4>
-                          <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        </div>
-                  
-                        <!-- Modal body -->
-                        <div class="modal-body">
-                            <div class="form-group col-md-8">
-                                <select class="form-control" id="seats" >
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                </select>
-                            </div>            
-                        </div>
-                  
-                        <!-- Modal footer -->
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-danger" data-dismiss="modal">Book</button>
-                        </div>
-                  
-                      </div>
-                    </div>
-                  </div>
+        </div>
         </div>
 
         <!-- <div class="not-map"> -->
@@ -472,7 +452,7 @@
                         <span class="menu-item-click fas fa-arrow-right"></span>
                     </div>
                 </a>
-                <a class="menu-item" href="profile.html">
+                <!-- <a class="menu-item" href="profile.html">
                     <span class="menu-item-icon menu-dark profile">
                         <img src="../icons/avatar-dark.svg" alt="Avatar Darker Icon">
                     </span>
@@ -481,7 +461,7 @@
                     </span>
                     <span class="menu-item-title profile">Profile</span>
                     <span class="menu-item-click fas fa-arrow-right"></span>
-                </a>
+                </a> -->
                 <a class="menu-item" href="payment-method.html">
                     <span class="menu-item-icon far fa-money-bill-alt"></span>
                     <span class="menu-item-title">Payment Methods</span>
@@ -507,11 +487,11 @@
                     <span class="menu-item-title">My Addresses</span>
                     <span class="menu-item-click fas fa-arrow-right"></span>
                 </a>
-                <a class="menu-item" href="apply-promo.html">
+                <!-- <a class="menu-item" href="apply-promo.html">
                     <span class="menu-item-icon far fa-plus-square"></span>
                     <span class="menu-item-title promo">Apply Promo Code</span>
                     <span class="menu-item-click fas fa-arrow-right"></span>
-                </a>
+                </a> -->
                 <a class="menu-item" href="settings.html">
                     <span class="menu-item-icon menu-dark setting">
                         <img src="../icons/settings.svg" alt="My Settings Icon">
@@ -522,7 +502,7 @@
                     <span class="menu-item-title">Settings</span>
                     <span class="menu-item-click fas fa-arrow-right"></span>
                 </a>
-                <a class="menu-item" href="online-support.html">
+                <!-- <a class="menu-item" href="online-support.html">
                     <span class="menu-item-icon menu-dark support">
                         <img src="../icons/support.svg" alt="Support Icon">
                     </span>
@@ -531,8 +511,8 @@
                     </span>
                     <span class="menu-item-title">Online Support</span>
                     <span class="menu-item-click fas fa-arrow-right"></span>
-                </a>
-                <a href="loading-logo.html" class="menu-item margin-top-auto">
+                </a> -->
+                <a href="sign-in.html" class="menu-item margin-top-auto">
                     <span class="menu-item-icon menu-dark logout">
                         <img src="../icons/logout.svg" alt="Logout Icon">
                     </span>
