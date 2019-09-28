@@ -43,10 +43,31 @@ document.getElementById("driverRegistration").addEventListener("submit", e => {
     .then(res => res.json())
     .then(info => {
       if (info.success) {
-        window.location = "index.html";
+        publishRideApi()
       } else {
         alert(info.message);
       }
     })
     .catch(err => console.log(err));
 });
+
+
+function publishRideApi(){
+  fetch(url + "/ride", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "user-id": localStorage.getItem('userId')
+    },
+    body: localStorage.getItem('publishRide')
+  })
+    .then(res => res.json())
+    .then(info => {
+      if (info.success) {
+        window.location = "index.html";
+      } else {
+        alert(info.message);
+      }
+    })
+    .catch(err => console.log(err));
+}

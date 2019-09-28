@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- Mirrored from templates-preview.com/gitex/customer/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 26 Sep 2019 09:17:54 GMT -->
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
@@ -17,13 +16,6 @@
     <link rel="stylesheet" href="../css/styles.css" />
     <link rel="stylesheet" href="../css/custom.css" />
     <title>Add Route</title>
-
-    <script>
-      function loginpage() {
-        window.location = "sign-in.html";
-        return false;
-      }
-    </script>
   </head>
   <body>
     <!--Loading Container Start-->
@@ -105,7 +97,7 @@
         <!--Google Maps End-->
       </div>
       <div class="col-xs-6 col-sm-6 remaining-height">
-        <form onsubmit="return loginpage()">
+        <form id="publishRidesDriver">
           <div class="form-row">
             <div class="form-group col-md-12">
               <label for="inputEmail4">Stopover</label>
@@ -120,7 +112,7 @@
               <input
                 type="text"
                 class="form-control"
-                id="inputEmail4"
+                id="stopover"
                 placeholder="Your arrival point (address, city, station...)"
               />
             </div>
@@ -129,6 +121,7 @@
             <div class="form-group col-md-6">
               <label>Departure date:</label>
               <input
+              id="deptdate"
                 type="date"
                 name="bday"
                 max="3000-12-31"
@@ -138,7 +131,7 @@
             </div>
             <div class="form-group col-md-3">
               <label>Hour:</label>
-              <select class="form-control" id="exampleFormControlSelect2">
+              <select class="form-control" id="depthr">
                 <option>00</option>
                 <option>01</option>
                 <option>02</option>
@@ -167,7 +160,7 @@
             </div>
             <div class="form-group col-md-3">
               <label>Minutes:</label>
-              <select class="form-control" id="exampleFormControlSelect2">
+              <select class="form-control" id="deptmin">
                 <option>00</option>
                 <option>10</option>
                 <option>20</option>
@@ -182,6 +175,7 @@
             <div class="form-group col-md-6">
               <label>Return date:</label>
               <input
+              id="retdate"
                 type="date"
                 name="bday"
                 max="3000-12-31"
@@ -191,7 +185,7 @@
             </div>
             <div class="form-group col-md-3">
               <label>Hour:</label>
-              <select class="form-control" id="exampleFormControlSelect2">
+              <select class="form-control" id="rethr">
                 <option>00</option>
                 <option>01</option>
                 <option>02</option>
@@ -220,7 +214,7 @@
             </div>
             <div class="form-group col-md-3">
               <label>Minutes:</label>
-              <select class="form-control" id="exampleFormControlSelect2">
+              <select class="form-control" id="retmin">
                 <option>00</option>
                 <option>10</option>
                 <option>20</option>
@@ -260,7 +254,7 @@
             </div>
             <div class="form-group col-md-3">
               <label for="inputState">Number of seats</label>
-              <select id="selectedSeat" class="form-control">
+              <select id="noOfSeat" class="form-control">
                 <option>1</option>
                 <option>2</option>
                 <option selected>3</option>
@@ -270,6 +264,7 @@
             <div class="form-group col-md-6">
               <label for="inputZip">Ride Details:</label>
               <input
+              id="ridedetails"
                 type="text"
                 class="form-control"
                 id="inputZip"
@@ -283,9 +278,9 @@
                 <input
                   type="checkbox"
                   class="form-check-input"
-                  id="exampleCheck1"
+                  id="maxSeat"
                 />
-                <label class="form-check-label" for="exampleCheck1"
+                <label class="form-check-label" for="maxSeat"
                   >Max. 2 in the back seats (preferred by co-travellers)</label
                 >
               </div>
@@ -339,6 +334,4 @@
     <script src="../api/publishRides.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmwbZFOM6zFZpFMOng9mZMc-UzQtXvsaU&amp;libraries=places&amp;callback=initMap"></script>
   </body>
-
-  <!-- Mirrored from templates-preview.com/gitex/customer/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 26 Sep 2019 09:19:19 GMT -->
 </html>

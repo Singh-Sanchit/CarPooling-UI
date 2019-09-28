@@ -1006,10 +1006,10 @@ AutocompleteDirectionsHandler.prototype.setupPlaceChangedListener = function(
       localStorage.setItem('dest-lat', place.geometry.location.lat());
       localStorage.setItem('dest-lng', place.geometry.location.lng());
       localStorage.setItem('dest', place.formatted_address);
-
       let distance = google.maps.geometry.spherical.computeDistanceBetween (new google.maps.LatLng(localStorage.getItem('origin-lat'), localStorage.getItem('origin-lng')), new google.maps.LatLng(place.geometry.location.lat(), place.geometry.location.lng()));
-      localStorage.setItem("distance", ((distance/20000) * 70 + 150).toFixed(0))
-      $('#price').val(((distance/20000) * 70 + 150).toFixed(0))
+      console.log("Distance: ", distance)
+      localStorage.setItem("distance", ((((distance/20000) * 70 + 150)/2).toFixed(0)))
+      $('#price').val((((distance/20000) * 70 + 150)/2).toFixed(0))
       let directionsService = new google.maps.DirectionsService();
       let request = {
             origin: new google.maps.LatLng(localStorage.getItem('origin-lat'),localStorage.getItem('origin-lng')),
@@ -1025,8 +1025,12 @@ AutocompleteDirectionsHandler.prototype.setupPlaceChangedListener = function(
                 alert("Directions Request from " + start.toUrlValue(6) + " to " + end.toUrlValue(6) + " failed: " + status);
             }
         });
+<<<<<<< HEAD
     }
     
+=======
+    }    
+>>>>>>> 7ed45feba45e3bde26b9a88bf9b96ada57ed935c
   });
 };
 
