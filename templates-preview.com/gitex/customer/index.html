@@ -68,7 +68,7 @@
                         </div>
                         <span class="dotted-line-index"></span>
                     </div>
-                              
+                   
                     <form id="customer-form">
                     <div class="form-row">
                         <div class="form-group col-md-6">
@@ -80,11 +80,11 @@
                             min="1000-01-01"
                             class="form-control"
                             id="datefield"
-                            required/>
+                            />
                         </div>
                         <div class="form-group col-md-3">
                             <label>Hour:</label>
-                            <select class="form-control" id="hrs" required>
+                            <select class="form-control" id="hrs" >
                                 <option>00</option>
                                 <option>01</option>
                                 <option>02</option>
@@ -113,7 +113,7 @@
                         </div>
                         <div class="form-group col-md-3">
                             <label>Minutes:</label>
-                            <select class="form-control" id="mins" required>
+                            <select class="form-control" id="mins" >
                                 <option>00</option>
                                 <option>10</option>
                                 <option>20</option>
@@ -127,7 +127,7 @@
                               
                     <div class="w-75 request-ride-btn" style="margin:10px auto;">
                         <button type="submit" class="btn btn-primary">Request a Ride</button>
-                    </div>            
+                    </div>
                 </div>
                 </form>
             </div>
@@ -136,8 +136,43 @@
         <!--Google Maps Start-->
         <div id="map" class="h-100"></div>
         <!--Google Maps End-->
+        <div class="container row justify-content-center" >
+            <div class="col-3"></div>
+            <div id="rideCards" class="col-6"></div>
 
-        <div class="not-map">
+            <div class="modal" id="myModal">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                  
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                          <h4 class="modal-title">Select number of seats</h4>
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                  
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <div class="form-group col-md-8">
+                                <select class="form-control" id="seats" >
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                </select>
+                            </div>            
+                        </div>
+                  
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-danger" data-dismiss="modal">Book</button>
+                        </div>
+                  
+                      </div>
+                    </div>
+                  </div>
+        </div>
+
+        <!-- <div class="not-map"> -->
 
             <!-- Request Ride Button Container Start-->
             <!-- <div class="request-ride-btn hidden">
@@ -535,6 +570,7 @@
 <script src="../js/bootstrap.min.js"></script>
 <script src="../js/main.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmwbZFOM6zFZpFMOng9mZMc-UzQtXvsaU&amp;libraries=places&amp;callback=initMap"></script>
+<script src="../api/root.js"></script>
 <script src="../api/getRides.js"></script>
 
 </body>
