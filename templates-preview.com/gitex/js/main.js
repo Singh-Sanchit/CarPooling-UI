@@ -1001,16 +1001,40 @@ AutocompleteDirectionsHandler.prototype.setupPlaceChangedListener = function(
       localStorage.setItem('origin-lat', place.geometry.location.lat());
       localStorage.setItem('origin-lng', place.geometry.location.lng());
       localStorage.setItem('origin', place.formatted_address);
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 9771a2ac14c8900a71c968b6a56f999138f6350a
     } else {
       me.destinationPlaceId = place.place_id;
       localStorage.setItem('dest-lat', place.geometry.location.lat());
       localStorage.setItem('dest-lng', place.geometry.location.lng());
       localStorage.setItem('dest', place.formatted_address);
 
+<<<<<<< HEAD
+=======
+      let distance = google.maps.geometry.spherical.computeDistanceBetween (new google.maps.LatLng(localStorage.getItem('origin-lat'), localStorage.getItem('origin-lng')), new google.maps.LatLng(place.geometry.location.lat(), place.geometry.location.lng()));
+      localStorage.setItem("distance", ((distance/20000) * 70 + 150).toFixed(0))
+      $('#price').val(((distance/20000) * 70 + 150).toFixed(0))
+      let directionsService = new google.maps.DirectionsService();
+      let request = {
+            origin: new google.maps.LatLng(localStorage.getItem('origin-lat'),localStorage.getItem('origin-lng')),
+            destination: new google.maps.LatLng(localStorage.getItem('dest-lat'),localStorage.getItem('dest-lng')),
+            travelMode: google.maps.TravelMode.DRIVING
+        };
+        console.log(request)
+        directionsService.route(request, function (response, status) {
+            if (status == google.maps.DirectionsStatus.OK) {
+                directionsDisplay.setDirections(response);
+                directionsDisplay.setMap(map);
+            } else {
+                alert("Directions Request from " + start.toUrlValue(6) + " to " + end.toUrlValue(6) + " failed: " + status);
+            }
+        });
+>>>>>>> 9771a2ac14c8900a71c968b6a56f999138f6350a
     }
-    me.route();
+    
   });
 };
 
