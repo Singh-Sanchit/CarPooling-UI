@@ -966,13 +966,13 @@ function AutocompleteDirectionsHandler(map) {
   var originAutocomplete = new google.maps.places.Autocomplete(originInput);
   // originInputContainer.appendChild(originAutocomplete);
   // Specify just the place data fields that you need.
-  originAutocomplete.setFields(["place_id", "geometry"]);
+  originAutocomplete.setFields(["place_id", "geometry", "formatted_address"]);
 
   var destinationAutocomplete = new google.maps.places.Autocomplete(
     destinationInput
   );
   // Specify just the place data fields that you need.
-  destinationAutocomplete.setFields(["place_id", "geometry"]);
+  destinationAutocomplete.setFields(["place_id", "geometry", "formatted_address"]);
 
   this.setupPlaceChangedListener(originAutocomplete, "ORIG");
   this.setupPlaceChangedListener(destinationAutocomplete, "DEST");
@@ -1000,14 +1000,33 @@ AutocompleteDirectionsHandler.prototype.setupPlaceChangedListener = function(
       me.originPlaceId = place.place_id;
       localStorage.setItem('origin-lat', place.geometry.location.lat());
       localStorage.setItem('origin-lng', place.geometry.location.lng());
-
+      localStorage.setItem('origin', place.formatted_address);
     } else {
       me.destinationPlaceId = place.place_id;
       localStorage.setItem('dest-lat', place.geometry.location.lat());
       localStorage.setItem('dest-lng', place.geometry.location.lng());
+      localStorage.setItem('dest', place.formatted_address);
 
+      let distance = google.maps.geometry.spherical.computeDistanceBetween (new google.maps.LatLng(localStorage.getItem('origin-lat'), localStorage.getItem('origin-lng')), new google.maps.LatLng(place.geometry.location.lat(), place.geometry.location.lng()));
+      localStorage.setItem("distance", ((distance/20000) * 70 + 150).toFixed(0))
+      $('#price').val(((distance/20000) * 70 + 150).toFixed(0))
+      let directionsService = new google.maps.DirectionsService();
+      let request = {
+            origin: new google.maps.LatLng(localStorage.getItem('origin-lat'),localStorage.getItem('origin-lng')),
+            destination: new google.maps.LatLng(localStorage.getItem('dest-lat'),localStorage.getItem('dest-lng')),
+            travelMode: google.maps.TravelMode.DRIVING
+        };
+        console.log(request)
+        directionsService.route(request, function (response, status) {
+            if (status == google.maps.DirectionsStatus.OK) {
+                directionsDisplay.setDirections(response);
+                directionsDisplay.setMap(map);
+            } else {
+                alert("Directions Request from " + start.toUrlValue(6) + " to " + end.toUrlValue(6) + " failed: " + status);
+            }
+        });
     }
-    me.route();
+    
   });
 };
 
