@@ -1025,12 +1025,7 @@ AutocompleteDirectionsHandler.prototype.setupPlaceChangedListener = function(
                 alert("Directions Request from " + start.toUrlValue(6) + " to " + end.toUrlValue(6) + " failed: " + status);
             }
         });
-<<<<<<< HEAD
     }
-    
-=======
-    }    
->>>>>>> 7ed45feba45e3bde26b9a88bf9b96ada57ed935c
   });
 };
 

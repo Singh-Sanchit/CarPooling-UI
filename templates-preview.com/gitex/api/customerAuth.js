@@ -51,7 +51,7 @@ document.getElementById("driverLogin").addEventListener("submit", e => {
 		  .then(res => res.json())
 		  .then(info => {
 			if (info.success) {
-			  window.location = "sign-up.html";
+			  alert("SignUp Successful")
 			} else {
 			  alert(info.message);
 			}
